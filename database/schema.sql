@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    age INTEGER NOT NULL,
+    gender TEXT NOT NULL,
+    contact TEXT
+);
+
+CREATE TABLE IF NOT EXISTS grades (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id INTEGER NOT NULL,
+    subject TEXT NOT NULL,
+    score REAL NOT NULL,
+    FOREIGN KEY(student_id) REFERENCES students(id)
+);
